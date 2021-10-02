@@ -32,7 +32,7 @@ int main() {
         double x1_d = (-b + sqrt(d)) / (2 * a);
         double res = a * (x1_d * x1_d) + b * x1_d + c;
 
-        cout << "Testing with x1 as double : " << res << std::endl;
+        cout << "Testing with x1 as double, root is : " << res << std::endl;
         if (abs(0 - res) < EPSILON) {
             std::cout << "Test Passed" << std::endl;
         } else { std::cout << " Test Failed" << std::endl; }
