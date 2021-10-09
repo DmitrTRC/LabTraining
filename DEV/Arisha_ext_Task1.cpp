@@ -10,12 +10,10 @@
 
 using namespace std;
 
-// Аришик, для тестирования конечно есть библиотеки и фреймворки, но мы напишем простую функцию для тестирования результата.
+// Аришик, для тестирования конечно есть библиотеки и фреймворки, но мы напишем простую функцию CheckRoot для тестирования результата.
 // Она будет просто подставлять результат в исходное уравнение
-
-
-void CheckRoot(int a, int b, int c, double root) {
-    auto EPSILON = 1e-6; // Формализуем предельно нужную точность.
+void CheckRoot(const int a, const int b, const int c, const double root) {
+    const auto EPSILON = 1e-6; // Формализуем предельно нужную точность.
     double result = a * (root * root) + b * root + c; // Считаем результат который должен стремиться к нулю.
     std::cout << std::endl << "For root = " << root << "  result = " << result << std::endl;
 
@@ -29,14 +27,13 @@ int main() {
     int a, b, c;
     cin >> a >> b >> c;
     int d = b * b - 4 * a * c;
-    std::cout << "Root Discriminant type : " << typeid(b * b - 4 * a * c).name() << " Value : " << b * b - 4 * a * c
-              << std::endl;
-    if (d > 0) {
-        std::cout << "Root expression type : " << typeid((-b + sqrt(d)) / (2 * a)).name() << " Value : "
-                  << (-b + sqrt(d)) / (2 * a) << std::endl;
 
-        int x1 = (-b + sqrt(d)) / (2 * a); // Warning: Clang-Tidy: Narrowing conversion from 'double' to 'int' - Читай предупреждения.
-        int x2 = (-b - sqrt(d)) / (2 * a); // Warning: Clang-Tidy: Narrowing conversion from 'double' to 'int' - Читай предупреждения.
+    if (d > 0) {
+
+        int x1 = (-b + sqrt(d)) / (2 * a);
+        // Warning: Clang-Tidy: Narrowing conversion from 'double' to 'int' - Читай предупреждения.
+        int x2 = (-b - sqrt(d)) / (2 * a);
+        // Warning: Clang-Tidy: Narrowing conversion from 'double' to 'int' - Читай предупреждения.
         cout << "two solutions" << "\n" << x1 << "\n" << x2;
 
         // А вот теперь посчитаем проверку и подставим твой x1
