@@ -5,6 +5,7 @@
 #include <iostream>
 #include <cmath>
 
+
 //
 //using namespace std;
 //
@@ -26,10 +27,11 @@
 //        cout << "no solutions";
 //    }
 //}
+
 int main() {
     int counter = 0;
     do {
-        counter ++;
+        counter++;
         double result = sqrt(counter * counter) - sqrt(counter) * sqrt(counter);
         std::cout << "Counter : " << counter << std::endl;
         if (result != 0) {
@@ -42,6 +44,7 @@ int main() {
 
     double a = (0.3 * 3) + 0.1;
     double b = 1;
-    if ( a == b) std::cout << "a == b" << a <<" , " << b << std::endl;
+    if (a == b) std::cout << "a == b , a = " << a << " , " << "b = " << b << std::endl;
     else std::cout << "a != b " << "a = " << a << "  b = " << b << std::endl;
 }
+
