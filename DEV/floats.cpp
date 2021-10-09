@@ -5,46 +5,50 @@
 #include <iostream>
 #include <cmath> //! Not math.h !
 
-
-//
-//using namespace std;
-//
-//int main() {
-//    double a, b, c;
-//    cin >> a >> b >> c;
-//    double d = b * b - 4 * a * c;
-//    if (d > 0) {
-//        double x1 = (-b + sqrt(d)) / (2 * a);
-//        double x2 = (-b - sqrt(d)) / (2 * a);
-//        cout << fixed << "two solutions" << "\n" << x1 << "\n" << x2;
-//    }
-//    if (d == 0) {
-//        double x = -b / (2 * a);
-//        cout << fixed << "one solution \n" << x;
-//
-//    }
-//    if (d < 0) {
-//        cout << "no solutions";
-//    }
-//}
+bool cmp_float(double a, double b, double PRECISION = 1e-6) {
+    std::cout << "\n Calculate with PRECISION = " << PRECISION << std::endl;
+    return  fabs( a - b) < PRECISION;
+}
+// We cant compare double  x == 0 !!!!!
+using namespace std;
 
 int main() {
-    int counter = 0;
-    do {
-        counter++;
-        double result = sqrt(counter * counter) - sqrt(counter) * sqrt(counter);
-        std::cout << "Counter : " << counter << std::endl;
-        if (result != 0) {
-            std::cout << "Failed ! Counter = " << counter << std::endl << "result = " << result << std::endl;
-            break;
-        }
-    } while (counter < 1000000000);
+    double a, b, c;
+    cin >> a >> b >> c;
+    double d = b * b - 4 * a * c;
+    if (d > 0) {
+        double x1 = (-b + sqrt(d)) / (2 * a);
+        double x2 = (-b - sqrt(d)) / (2 * a);
+        cout << fixed << "two solutions" << "\n" << x1 << "\n" << x2;
+    }
+    if (cmp_float(d,0)) {
+        double x = -b / (2 * a);
+        cout << fixed << "one solution \n" << x;
 
-    // Another example
-
-    double a = (0.3 * 3) + 0.1;
-    double b = 1;
-    if (a == b) std::cout << "a == b , a = " << a << " , " << "b = " << b << std::endl;
-    else std::cout << "a != b " << "a = " << a << "  b = " << b << std::endl;
+    }
+    if (d < 0) {
+        cout << "no solutions";
+    }
 }
+
+
+//int main() {
+//    int counter = 0;
+//    do {
+//        counter++;
+//        double result = sqrt(counter * counter) - sqrt(counter) * sqrt(counter);
+//        std::cout << "Counter : " << counter << std::endl;
+//        if (result != 0) {
+//            std::cout << "Failed ! Counter = " << counter << std::endl << "result = " << result << std::endl;
+//            break;
+//        }
+//    } while (counter < 1000000000);
+//
+//    // Another example
+//
+//    double a = (0.3 * 3) + 0.1;
+//    double b = 1;
+//    if (cmp_float(a, b)) std::cout << "a == b , a = " << a << " , " << "b = " << b << std::endl;
+//    else std::cout << "a != b " << "a = " << a << "  b = " << b << std::endl;
+//}
 
