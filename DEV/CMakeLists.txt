@@ -16,4 +16,4 @@ set(CMAKE_CXX_STANDARD 20)
 
 
 
-add_executable(LabTraining  floats.cpp)
+add_executable(LabTraining  iteration_size.cpp)
