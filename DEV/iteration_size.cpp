@@ -13,10 +13,10 @@ std::string ReadTextFile(const std::string &file_name) {
     if (!fileDescriptor) {
         std::cout << std::endl << "Fine " << file_name << " : not found" << std::endl;
     }
-    std::string next_string;
+    std::string textLine;
 
-    while (getline(fileDescriptor, next_string)) {
-        text_buff += next_string;
+    while (getline(fileDescriptor, textLine)) {
+        text_buff += textLine;
     }
 
     fileDescriptor.close();
@@ -37,8 +37,19 @@ std::vector<std::string> parseText(const std::string &text_buff) {
 }
 
 int main() {
-    auto parsed_text = parseText( ReadTextFile("demo.txt"));
-    for( const auto &line : parsed_text ) {
+    auto parsed_text = parseText(ReadTextFile("demo.txt"));
+    unsigned long address_counter = 0;
+    unsigned long value_counter = 0;
+
+    for (const auto &line: parsed_text) {
+        address_counter += sizeof(&line);
+        value_counter += line.size() * sizeof(char);
+        std::cout << "Size of line ( address ) : " << sizeof(&line) << std::endl;
+        std::cout << "Size of line ( address ) : " << sizeof(char) * line.size() << std::endl;
         std::cout << line << std::endl;
     }
+    std::cout << "==============================================================\n";
+    std::cout << "Total bytes when passed by reference : " << address_counter << "  Total bytes when passed by value : "
+              << value_counter << std::endl;
+
 }
