@@ -16,4 +16,4 @@ set(CMAKE_CXX_STANDARD 20)
 
 
 
-add_executable(LabTraining    ../PartI/C++/Lesson_4/template1.cpp)
+add_executable(LabTraining   iter2.cpp)
