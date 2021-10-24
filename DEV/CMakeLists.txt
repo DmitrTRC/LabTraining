@@ -16,4 +16,4 @@ set(CMAKE_CXX_STANDARD 20)
 
 
 
-add_executable(LabTraining   iter2.cpp)
+add_executable( iter2.cpp nsum.cpp)
