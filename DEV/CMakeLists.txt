@@ -16,4 +16,4 @@ set(CMAKE_CXX_STANDARD 20)
 
 
 
-add_executable( iter2.cpp nsum.cpp)
+add_executable( iter2.cpp nsum.cpp ../PartI/C++/Lesson_5/nsum.cpp)
