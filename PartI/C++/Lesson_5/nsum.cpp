@@ -12,9 +12,9 @@ int main() {
     int summa = 0; // !
     std::cin >> number;
 
-    while (number != 0) {
-        summa = summa + number % 10;
-        number = number / 10;
+    while (number) {
+        summa += number % 10;
+        number /= 10;
     }
     std::cout << abs(summa);
 }
