@@ -6,21 +6,13 @@
 #include <cmath>
 #include <string>
 
-#define PI 3.14
+using namespace std;
 
 int main(int argc, char *argv[]) {
-    if (argc < 2) {
-        std::cout << "Wrong arguments number ! ";
-        return -1;
-    }
+for ( auto index = 0 ; index < argc; index++){
+    std:: cout << argv[index] << std :: endl;
+}
 
-    if (atoi(argv[1]) < 16) {
-        std::cout << "You are too young try again later ! ";
-    } else {
-        std::cout << "Arguments number : " << argc << std::endl;
-        for (int i = 0; i < argc; i++) {
-            std::cout << i + 1 << ")" << " " << argv[i] << std::endl;
-        }
-    }    return 0;
+    return 0;
 }
 
