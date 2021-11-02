@@ -16,4 +16,4 @@ set(CMAKE_CXX_STANDARD 20)
 
 
 
-add_executable( LabTraining ../PartI/C++/Lesson_5/nsum.cpp)
+add_executable( LabTraining  ../PartI/C++/Lesson_6/vectors.cpp)
