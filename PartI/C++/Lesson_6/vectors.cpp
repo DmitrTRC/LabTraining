@@ -13,12 +13,18 @@ void printArray(std::array<int, SIZE> &arr) {
     }
 }
 
-void b_sort(int arr[]) {
-    int arr_size = sizeof(arr) / sizeof(arr[0]);
+void b_sort(int arr[], size_t arr_size) {
 
-    for ( size_t i = 0; i < arr_size;i++){
+    for (size_t i = 0; i < arr_size; i++) {
+        bool already_sorted = true;
 
-
+        for (size_t j = 0; j < arr_size - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                std::swap(arr[j], arr[j + 1]);
+                already_sorted = false;
+            }
+        }
+        if (already_sorted) break;
     }
 }
 
@@ -28,13 +34,25 @@ int main() {
     int array[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
     std::vector<int> year = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
+    for (auto &item: array) {
+        std::cout << item << " ";
+    }
+    std::cout << std::endl;
 
-    printArray(arr_year);
+    b_sort(array, sizeof(array) / sizeof(array[0]));
 
-    int new_month = 0;
-    std::cout << "Enter new month days count -> ";
-    std::cin >> new_month;
-    year.push_back(new_month);
+    for (auto &item: array) {
+        std::cout << item << " ";
+    }
+    std::cout << std::endl;
+
+//    printArray(arr_year);
+//
+//
+//    int new_month = 0;
+//    std::cout << "Enter new month days count -> ";
+//    std::cin >> new_month;
+//    year.push_back(new_month);
 
 //    std::cout << "Enter the month number (1 - 12 ) -> ";
 //    int month = 0;
