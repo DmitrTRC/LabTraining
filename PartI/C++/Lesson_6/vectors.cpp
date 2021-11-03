@@ -6,22 +6,36 @@
 #include <vector>
 #include <array>
 
+template<std::size_t SIZE>
+void printArray(std::array<int, SIZE> &arr) {
+    for (auto &item: arr) {
+        std::cout << item << std::endl;
+    }
+}
+
+void b_sort(int arr[]) {
+    int arr_size = sizeof(arr) / sizeof(arr[0]);
+
+    for ( size_t i = 0; i < arr_size;i++){
+
+
+    }
+}
+
 int main() {
-    std::array arr_year = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+
+    std::array<int, 12> arr_year = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
     int array[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
     std::vector<int> year = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-    std::cout << arr_year[13];
-    for (auto month: year) {
-        std::cout << month << std::endl;
-    }
+
+
+    printArray(arr_year);
+
     int new_month = 0;
     std::cout << "Enter new month days count -> ";
     std::cin >> new_month;
     year.push_back(new_month);
 
-    for (auto month: year) {
-        std::cout << month << std::endl;
-    }
 //    std::cout << "Enter the month number (1 - 12 ) -> ";
 //    int month = 0;
 //    std::cin >> month;
