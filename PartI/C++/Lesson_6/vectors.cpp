@@ -6,27 +6,9 @@
 #include <vector>
 #include <array>
 
-template<std::size_t SIZE>
-void printArray(std::array<int, SIZE> &arr) {
-    for (auto &item: arr) {
-        std::cout << item << std::endl;
-    }
-}
 
-void b_sort(int arr[], size_t arr_size) {
 
-    for (size_t i = 0; i < arr_size; i++) {
-        bool already_sorted = true;
 
-        for (size_t j = 0; j < arr_size - i - 1; j++) {
-            if (arr[j] > arr[j + 1]) {
-                std::swap(arr[j], arr[j + 1]);
-                already_sorted = false;
-            }
-        }
-        if (already_sorted) break;
-    }
-}
 
 int main() {
 
@@ -39,7 +21,7 @@ int main() {
     }
     std::cout << std::endl;
 
-    b_sort(array, sizeof(array) / sizeof(array[0]));
+
 
     for (auto &item: array) {
         std::cout << item << " ";
