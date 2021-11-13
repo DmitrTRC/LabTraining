@@ -5,6 +5,7 @@
 #include <iostream>
 #include <vector>
 #include <array>
+#include <algorithm>
 
 void bubble_sort(int arr[], int arr_size) {
     for (size_t i = 0; i < arr_size; i++) {
