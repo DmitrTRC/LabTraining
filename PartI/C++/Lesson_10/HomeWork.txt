@@ -1,0 +1,9 @@
+You have  an array of integers.
+
+[1,3,6,6,7,7,2,2,9,3,9,8,8,5,4,4,0,0,1]
+[2000, 2001, 2002, 17, 2002, 2001, 2000]
+
+Task:
+    Find uniq number.
+
+You can use any container type for this task. ( vector, array, int [] )
