@@ -2,7 +2,7 @@ from functools import reduce
 
 
 def get_not_dup(array):
-    return reduce(lambda x, y: x and y, array)
+    return reduce(lambda x, y: x ^ y, array)
 
 
 if __name__ == '__main__':
@@ -12,6 +12,6 @@ if __name__ == '__main__':
     ]
 
     for test in test_load:
-        print(get_not_dup(test[0]))
         assert get_not_dup(test[0]) == test[1], 'Test failed :  GOT {} EXPECTED {}'.format(get_not_dup(test[0]),
-                                                                                                test[1])
+                                                                                           test[1])
+        print(get_not_dup(test[0]))
