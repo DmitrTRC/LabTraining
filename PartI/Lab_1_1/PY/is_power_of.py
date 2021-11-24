@@ -1,12 +1,15 @@
 def is_power_of(number, base):
-  # Base case: when number is smaller than base.
-  if number < base:
-    # If number is equal to 1, it's a power (base**0).
-    return __
+    """
+    This function checks if a number is a power of a base.
+    """
+    if number == 1:
+        return True
+    elif number % base == 0:
+        return is_power_of(number // base, base)
+    else:
+        return False
 
-  # Recursive case: keep dividing number by base.
-  return is_power_of(__, ___)
 
-print(is_power_of(8,2)) # Should be True
-print(is_power_of(64,4)) # Should be True
-print(is_power_of(70,10)) # Should be False
+print(is_power_of(8, 2))  # Should be True
+print(is_power_of(64, 4))  # Should be True
+print(is_power_of(70, 10))  # Should be False
