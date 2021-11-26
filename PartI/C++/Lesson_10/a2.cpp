@@ -6,6 +6,7 @@
 #include <algorithm>
 #include <map>
 #include <numeric>
+#include <chrono>
 
 using namespace std;
 
@@ -47,7 +48,13 @@ void get_uniq(std::vector<int> arr) {
 
 int main() {
     vector<int> n = {1, 3, 6, 6, 7, 7, 2, 2, 9, 3, 9, 8, 8, 5, 4, 4, 0, 0, 1};
+
+    auto start = std::chrono::high_resolution_clock::now();
     get_uniq_fast(n);
+    auto finish = std::chrono::high_resolution_clock::now();
+
+   // std::cout << std::chrono::duration_cast<std::chrono::minutes> (finish - start) << std::endl;
+
     get_uniq(n);
 //
 //    sort(n.begin(), n.end()); // TimSort O(n)
