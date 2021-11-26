@@ -3,12 +3,12 @@
 //
 #include <iostream>
 #include <vector>
-#include <algorithm>
 #include <map>
 #include <numeric>
 #include <chrono>
 
 using namespace std;
+
 
 //AND  1 1 1
 //     1 0 0
@@ -52,8 +52,9 @@ int main() {
     auto start = std::chrono::high_resolution_clock::now();
     get_uniq_fast(n);
     auto finish = std::chrono::high_resolution_clock::now();
+    auto duration = duration_cast<std::chrono::microseconds>(finish - start);
 
-   // std::cout << std::chrono::duration_cast<std::chrono::minutes> (finish - start) << std::endl;
+    std::cout << duration.count()  << " ms" << std::endl;
 
     get_uniq(n);
 //

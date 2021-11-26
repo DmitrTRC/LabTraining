@@ -15,5 +15,5 @@ set(CMAKE_CXX_STANDARD 20)
 # Add tasks subprojects
 
 
-add_executable(LabTraining PartI/C++/Lesson_10/a2.cpp)
+add_executable(LabTraining PartI/C++/Lesson_9/a1.cpp)
 
