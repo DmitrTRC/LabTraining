@@ -1,9 +1,11 @@
-You have  an array of integers.
+1) Write factorial function.
 
-[1,3,6,6,7,7,2,2,9,3,9,8,8,5,4,4,0,0,1]
-[2000, 2001, 2002, 17, 2002, 2001, 2000]
+5! = 1 * 2 * 3 * 4 * 5
 
-Task:
-    Find uniq number.
+long long factorial(int)
 
-You can use any container type for this task. ( vector, array, int [] )
+2) Write function that returns sum of positive numbers
+
+f([0, -1 , -6, 4, 5 ]) => 9;
+
+

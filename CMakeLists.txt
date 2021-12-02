@@ -5,7 +5,7 @@
 # Tasks are added as separate sub-projects so as compilation errors in
 # one task don't affect another task.
 
-cmake_minimum_required(VERSION 3.20)
+cmake_minimum_required(VERSION 3.19)
 project(LabTraining)
 
 set(CMAKE_CXX_STANDARD 20)
@@ -15,5 +15,5 @@ set(CMAKE_CXX_STANDARD 20)
 # Add tasks subprojects
 
 
-add_executable(LabTraining PartI/C++/Lesson_9/a1.cpp)
+add_executable(LabTraining  PartI/C++/Lesson_10/htsolve.cpp)
 
