@@ -1,19 +1,19 @@
 def counter(start, stop):
     x = start
-    if ___:
+    if start > stop:
         return_string = "Counting down: "
         while x >= stop:
             return_string += str(x)
-            if ___:
+            if x != stop:
                 return_string += ","
-            ___
+            x -= 1
     else:
         return_string = "Counting up: "
         while x <= stop:
             return_string += str(x)
-            if ___:
+            if x != stop:
                 return_string += ","
-            ___
+            x += 1
     return return_string
 
 
