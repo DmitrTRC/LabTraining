@@ -6,7 +6,7 @@
      but never by themselves, and could be several words long.
     For example, "123 Main Street", "1001 1st Ave", or "55 North Center Drive".
 
-3) Use a dictionary to count the frequency of letters in the input string.
+3) Use a map to count the frequency of letters in the input string.
    Only letters should be counted, not blank spaces, numbers, or punctuation.
    Upper case should be considered the same as lower case.
    For example, count_letters("This is a sentence.")
