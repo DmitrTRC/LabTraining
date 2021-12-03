@@ -29,14 +29,17 @@ using namespace std;
 //        1 0 1
 //        0 1 1
 //        0 0 0
-
-
-void get_uniq_fast(std::vector<int> arr) {
-    std :: cout << std::accumulate(arr.begin(), arr.end(), 0, [](int lhs, int rhs){
-        return lhs ^ rhs ;
-    })<< std::endl; //O(n)
+int dup_checker( int lhs , int rhs){
+    return lhs ^ rhs;
 }
 
+void get_uniq_fast(std::vector<int> arr) {
+    std :: cout << std::accumulate(arr.begin(), arr.end(), 0, dup_checker)<< std::endl; //O(n)
+}
+
+void bubble_sort(){
+
+}
 void get_uniq(std::vector<int> arr) {
     std::map<int, int> result;
 
