@@ -15,5 +15,5 @@ set(CMAKE_CXX_STANDARD 20)
 # Add tasks subprojects
 
 
-add_executable(LabTraining   ForTeacher/Hex_To_Dec.cpp)
+add_executable(LabTraining   PartII_OOP/Elevator.cpp)
 
