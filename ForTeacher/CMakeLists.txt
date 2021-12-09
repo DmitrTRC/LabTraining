@@ -6,14 +6,12 @@
 # one task don't affect another task.
 
 cmake_minimum_required(VERSION 3.19)
-project(LabTraining)
+project(ForTeacher)
 
 set(CMAKE_CXX_STANDARD 20)
-
-include_directories(ForTeacher)
 
 # Add tasks subprojects
 
 
-add_executable(LabTraining  PartI/c++/Lesson_12/Struct_Intro.cpp)
-add_executable(ForTeacher  ForTeacher/Composition.cpp)
+
+
