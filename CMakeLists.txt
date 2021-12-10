@@ -11,10 +11,12 @@ project(LabTraining)
 set(CMAKE_CXX_STANDARD 20)
 
 include_directories(ForTeacher)
+include_directories(ForTeacher/Marks)
 
 # Add tasks subprojects
 
 
-add_executable(LabTraining  PartI/C++/Lesson_12/Struct_Intro.cpp)
-add_executable(ForTeacher  ForTeacher/hex_to_dec.cpp ForTeacher/char_frequenct.cpp)
+add_executable(LabTraining PartI/C++/Lesson_12/Struct_Intro.cpp)
+add_executable(ForTeacher ForTeacher/hex_to_dec.cpp ForTeacher/char_frequenct.cpp)
 add_executable(Composition ForTeacher/Composition.cpp)
+add_executable(Marks ForTeacher/Marks/marks.cpp)
