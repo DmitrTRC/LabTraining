@@ -11,6 +11,13 @@ struct CarInfo {
     std::string color;
     std::string engine;
     std::string transmission;
+    void getInfo() {
+        std::cout << "Year: " << year << std::endl;
+        std::cout << "Model: " << model << std::endl;
+        std::cout << "Color: " << color << std::endl;
+        std::cout << "Engine: " << engine << std::endl;
+        std::cout << "Transmission: " << transmission << std::endl;
+    }
 };
 
 struct CarSalesCard {
@@ -20,18 +27,7 @@ struct CarSalesCard {
     int discount;
 
     void PrintInfo() {
-         for(auto& i : car) {
-             std::cout << i << std::endl;
-         }
-//        std::cout << "Name: " << name << std::endl;
-//        std::cout << "Price: " << price << std::endl;
-//        std::cout << "Car info: " << std::endl;
-//        std::cout << "Year: " << car.year << std::endl;
-//        std::cout << "Model: " << car.model << std::endl;
-//        std::cout << "Color: " << car.color << std::endl;
-//        std::cout << "Engine: " << car.engine << std::endl;
-//        std::cout << "Transmission: " << car.transmission << std::endl;
-//        std::cout << "Discount: " << discount << std::endl;
+        car.getInfo();
         std::cout << std::endl << std::endl;
     }
 };

@@ -15,5 +15,6 @@ include_directories(ForTeacher)
 # Add tasks subprojects
 
 
-add_executable(LabTraining  PartI/c++/Lesson_12/Struct_Intro.cpp)
-add_executable(ForTeacher  ForTeacher/Composition.cpp)
+add_executable(LabTraining  PartI/C++/Lesson_12/Struct_Intro.cpp)
+add_executable(ForTeacher  ForTeacher/hex_to_dec.cpp ForTeacher/char_frequenct.cpp)
+add_executable(Composition ForTeacher/Composition.cpp)

@@ -25,6 +25,12 @@ public:
         std::cout << "Read CSV init Read starting CSV file " << fileName << std::endl;
     };
 
+    SCData read_csv_file(const std::string &fileName) {
+        std::cout << "Read CSV read_csv_file() " << fileName << std::endl;
+
+        SCData data;
+        return data;
+    }
     SCData getData() {
         std::cout << "ReadCSV ::  Getting data from CSV file" << std::endl;
         return {{{"1", "2", "3"}, {"4", "5", "6"}}};
