@@ -1,0 +1,13 @@
+1) Return the sum of all divisors of n, not including n
+
+2) The format_address function separates out parts of the address string into new strings: house_number and street_name,
+   and returns: "house number X on street named Y".
+    The format of the input string is: numeric house number, followed by the street name which may contain numbers,
+     but never by themselves, and could be several words long.
+    For example, "123 Main Street", "1001 1st Ave", or "55 North Center Drive".
+
+3) Use a map to count the frequency of letters in the input string.
+   Only letters should be counted, not blank spaces, numbers, or punctuation.
+   Upper case should be considered the same as lower case.
+   For example, count_letters("This is a sentence.")
+   should return {'t': 2, 'h': 1, 'i': 2, 's': 3, 'a': 1, 'e': 3, 'n': 2, 'c': 1}
