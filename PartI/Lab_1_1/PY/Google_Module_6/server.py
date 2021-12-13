@@ -17,6 +17,7 @@ class Server:
         """Closes a connection on this server."""
         # Remove the connection from the dictionary
         del self.connections[connection_id]
+        print(server.load())
 
     def load(self):
         """Calculates the current load for all connections."""
@@ -31,4 +32,13 @@ class Server:
         """Returns a string with the current load of the server"""
         return "{:.2f}%".format(self.load())
 
+
 # End Portion 1#
+if __name__ == '__main__':
+    server = Server()
+    server.add_connection("192.168.1.1")
+
+    print(server.load())
+    server.close_connection("192.168.1.1")
+    print(server.load())
+
