@@ -5,34 +5,34 @@ def get_event_date(event):
     return event.date
 
 
-def current_users(events):
-    evetns.sort(key=get_event_date)
+def current_users(events_list):
+    events.sort(key=get_event_date)
     machines = {}
-    for event in events:
+    for event in events_list:
         if event.machine not in machines:
             machines[event.machine] = set()
         if event.type == 'login':
             machines[event.machine].add(event.user)
         elif event.type == 'logout':
-            machines[event.machine].remove(event.user)
+            if event.user in machines[event.machine]:
+                machines[event.machine].remove(event.user)
     return machines
 
 
 def generate_report(machines):
-    for machine, users in machines.items():
-        if len(users) > 0:
-            user_list = ', '.join(users)
+    for machine, users_active in machines.items():
+        if len(users_active) > 0:
+            user_list = ', '.join(users_active)
             print(f'{machine}: {user_list}')
 
 
 events = [
-    Event('12:00:00', 'login', 'moxa', 'user1'),
-    Event('13:00:00', 'logout', 'moxa', 'user1'),
-    Event('12:00:00', 'login', 'moxa', 'user2'),
-    Event('13:00:00', 'logout', 'moxa', 'user2'),
-    Event('12:00:00', 'login', 'moxa', 'user3'),
-    Event('13:00:00', 'logout', 'moxa', 'user3'),
-    Event('12:00:00', 'login', 'moxa', 'user4')
+    Event('2020-01-21 12:45:56', 'login', 'myworkstation.local', 'jordan'),
+    Event('2020-01-22 15:53:42', 'logout', 'webserver.local', 'jordan'),
+    Event('2020-01-21 18:53:21', 'login', 'webserver.local', 'lane'),
+    Event('2020-01-22 10:25:34', 'logout', 'myworkstation.local', 'jordan'),
+    Event('2020-01-21 08:20:01', 'login', 'webserver.local', 'jordan'),
+    Event('2020-01-23 11:24:35', 'logout', 'mailserver.local', 'chris')
     ]
 
 users = current_users(events)
