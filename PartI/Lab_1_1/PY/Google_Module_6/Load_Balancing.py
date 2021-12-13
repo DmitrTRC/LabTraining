@@ -15,6 +15,7 @@ class LoadBalancing:
         # Add the connection to the server
         self.connections[connection_id] = server
         server.add_connection(connection_id)
+        self.ensure_availability()
 
     def close_connection(self, connection_id):
         """Closes the connection on the the server corresponding to connection_id."""
@@ -28,7 +29,7 @@ class LoadBalancing:
     def avg_load(self):
         """Calculates the average load of all servers"""
         # Sum the load of each server and divide by the amount of servers
-        return sum(server.load for server in self.servers) / len(self.servers)
+        return sum(server.load() for server in self.servers) / len(self.servers)
 
     def ensure_availability(self):
         """If the average load is higher than 50, spin up a new server"""
