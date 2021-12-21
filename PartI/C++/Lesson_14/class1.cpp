@@ -10,17 +10,16 @@ private:
     int y;
 
 public:
-    Coordinate (int x, int y) { // Python class  Demo:
-        // def __init__(self, x, y):
-        // self.x = x
-        // self.y = y
-        this->x = x;
-        this->y = y;
+    Coordinate (int _x,
+                int _y) {  // Конструктор  id we using the same variable name to resolve which "x" we use this->x or change parameter name to _x or something else
+
+        x = _x;
+        y = _y;
     }
 
-    void set_coordinate (int x, int y) {
-        this->x = x;
-        this->y = y;
+    void set_coordinate (int _x, int _y) {
+        x = _x;
+        y = _y;
     }
 
     void print_coord () {
