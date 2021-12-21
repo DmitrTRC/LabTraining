@@ -2,4 +2,9 @@
 2) Read GIT Manual and learn how to use it. (https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 3) Project Marks; Ideas.
 4) Project Marks; Code. Menu implementation.
-
+5) class Elevator;
+top, botoom, current_floor;
+show_current_floor();
+go_up()
+go_down()
+move_to_floor()
