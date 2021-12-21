@@ -1,0 +1,22 @@
+OOP.
+
+1. Encapsulation.
+- DATA + FUNCTIONALITY = OBJECT. ( Data + Code )
+- Privacy + Security.
+
+2. Polymorphism.
+- Overloading.
+Example:
+int add(int a, int b) {
+    std :: cout << "INT ADD ()"  << std :: endl;
+    return a + b;
+}
+double add(double a, double b) {
+    std :: cout << "DOUBLE ADD ()"  << std :: endl;
+    return a + b;
+}
+
+std::cout << add(1,2) << std::endl; // INT ADD() , 3
+std :: cout << add(1.0,2.0) << std :: endl; // DOUBLE ADD() , 3.0
+
+ 3. Inheritance.

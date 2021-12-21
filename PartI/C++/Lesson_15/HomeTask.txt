@@ -1,0 +1,5 @@
+1) Refactor to modern c++ style task2 from HomeTask 2 in module Lesson 13 (see Std::string methods find() and substr())
+2) Read GIT Manual and learn how to use it. (https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+3) Project Marks; Ideas.
+4) Project Marks; Code. Menu implementation.
+
