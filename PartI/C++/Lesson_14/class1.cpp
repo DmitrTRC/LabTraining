@@ -11,13 +11,13 @@ private:
 
 public:
     Coordinate (int _x,
-                int _y) {  // Конструктор  id we using the same variable name to resolve which "x" we use this->x or change parameter name to _x or something else
+                int _y) {  // Конструктор  if we're using the same variable name to resolve which "x" we use this->x or change parameter name to _x or something else
 
         x = _x;
         y = _y;
     }
 
-    void set_coordinate (int _x, int _y) {
+    void set_coordinate (int _x, int _y) { // The same way!
         x = _x;
         y = _y;
     }
