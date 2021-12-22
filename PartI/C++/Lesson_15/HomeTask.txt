@@ -8,3 +8,5 @@ show_current_floor();
 go_up()
 go_down()
 move_to_floor()
+
+Take an attention : Template class is already created. But not implemented yet.
