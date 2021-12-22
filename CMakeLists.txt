@@ -17,7 +17,7 @@ include_directories(ForTeacher/Marks)
 
 
 #add_executable(LabTraining PartI/C++/Lesson_13/hw_lettter_frequncy.cpp)
-add_executable(ForTeacher  ForTeacher/Lift.cpp)
-add_executable(Composition ForTeacher/Composition.cpp)
+#add_executable(ForTeacher  ForTeacher/Lift.cpp)
+#add_executable(Composition ForTeacher/Composition.cpp)
 #add_executable(Marks ForTeacher/Marks/marks.cpp)
 add_executable(LabTraining   PartI/C++/Lesson_15/Elevator.cpp)
