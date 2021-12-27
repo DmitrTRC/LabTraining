@@ -10,14 +10,20 @@ project(LabTraining)
 
 set(CMAKE_CXX_STANDARD 20)
 
+
+
+include_directories(OlympicTraining)
 include_directories(ForTeacher)
 include_directories(ForTeacher/Marks)
+
+
 
 # Add tasks subprojects
 
 
 #add_executable(LabTraining PartI/C++/Lesson_13/hw_lettter_frequncy.cpp)
-#add_executable(ForTeacher  ForTeacher/Lift.cpp)
-#add_executable(Composition ForTeacher/Composition.cpp)
+add_executable(ForTeacher  ForTeacher/Lift.cpp OlympicTraining/coins.cpp)
+add_executable(Composition ForTeacher/Composition.cpp)
 #add_executable(Marks ForTeacher/Marks/marks.cpp)
 add_executable(LabTraining   PartI/C++/Lesson_15/Elevator.cpp)
+add_executable(Olympic OlympicTraining/coins.cpp )

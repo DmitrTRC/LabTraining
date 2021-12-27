@@ -32,6 +32,7 @@ private:
 void test () {
     Elevator elevator (10, 1, 3);
 
+
     elevator.move (5);
     std::cout << elevator.getCurrentFloor () << std::endl; // Has to print 5
     assert(elevator.getCurrentFloor () == 5);
