@@ -3,24 +3,23 @@
 //
 
 /**
-  №1. Монеты (х1.5)
+  COINS_X1_5
 
-У Васи есть N рублей купюрами. Он хочет разменять их на монеты по 1, 4, 5 и 7 рублей.
+Vasya has N rubles in bills. He wants to exchange them for coins of 1, 4, 5 and 7 rubles. The machine, which does this,
+ accepts bills at the entrance, and issues coins,
+ and the smallest number of them. Write a program that receives one number at the input - the number of rubles,
+ and outputs one number at the output - the minimum number of coins of these denominations for the specified amount.
 
-Автомат, который это делает, принимает на вход купюры, а выдает монеты, причем наименьшее их количество.
+Input data: amount of money
+Output data: minimum amount of coins
 
-Напишите программу, которая на входе получает одно число — количество рублей, и выдает одно число на выходе — минимальное число монет данных номиналов на указанную сумму.
+Test pairs:
 
-Входные данные: количество денег
-Выходные данные: минимальное количество монет
+Input data: 14
+Output data: 2
 
-Тестовые пары:
-
-Входные данные: 14
-Выходные данные: 2
-
-Входные данные: 34
-Выходные данные: 6
+Input data: 34
+Output data: 6
 
 Входные данные: 1
 Выходные данные: 1
@@ -42,6 +41,7 @@
  **/
 
 #include <iostream>
+#include <vector>
 
 
 int coins (int n) {
@@ -56,9 +56,63 @@ int coins (int n) {
     return count;
 }
 
+int coins_arr ( int n,  std::vector<int> arr = {1, 4, 5, 7} ) {
+    int count = 0;
+    sort (arr.begin(), arr.end(), [](int a, int b) { return a > b; });
+    for (auto  i : arr) {
+        count += n / i;
+        n %= i;
+    }
+    return count;
+}
+
+
+int change_to_coins (int n) {
+    int count = 0;
+    while (n > 0) {
+        if (n >= 7) {
+            n -= 7;
+            count++;
+        } else if (n >= 5) {
+            n -= 5;
+            count++;
+        } else if (n >= 4) {
+            n -= 4;
+            count++;
+        } else if (n >= 1) {
+            n -= 1;
+            count++;
+        }
+    }
+    return count;
+}
+
+int change_to_coins_recurse (int n) {
+    if (n == 0) {
+        return 0;
+    }
+    if (n >= 7) {
+        return 1 + change_to_coins_recurse (n - 7);
+    }
+    if (n >= 5) {
+        return 1 + change_to_coins_recurse (n - 5);
+    }
+    if (n >= 4) {
+        return 1 + change_to_coins_recurse (n - 4);
+    }
+    if (n >= 1) {
+        return 1 + change_to_coins_recurse (n - 1);
+    }
+}
+
 int main () {
     int n;
     std::cin >> n;
     std::cout << coins (n) << std::endl;
+    std::cout << change_to_coins (n) << std::endl;
+    std::cout << change_to_coins_recurse (n) << std::endl;
+    std::cout << coins_arr (n) << std::endl;
+
+
     return 0;
 }
