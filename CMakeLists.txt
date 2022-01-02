@@ -28,4 +28,4 @@ add_executable(Composition ForTeacher/Composition.cpp)
 #add_executable(LabTraining   PartI/C++/Lesson_15/Elevator.cpp)
 add_executable(LabTraining   OlympicTraining/coins.cpp)
 
-add_executable(Olympic OlympicTraining/coins.cpp )
+add_executable(Olympic  OlympicTraining/Task2.cpp)
