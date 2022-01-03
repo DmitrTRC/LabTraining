@@ -7,19 +7,59 @@
 
 class Elevator {
 public:
-    Elevator (int _maxFloor, int _minFloor, int _currentFloor) { //Your code here
+    Elevator (int maxFloor, int minFloor, int currentFloor) { 
+        if (minFloor>maxFloor ||maxFloor<minFloor){
+            std::cout<<"incorrect value";
+        }
     }
 
-    void moveUp () { //Your code here
+    void moveUp () {
+        if (currentFloor == maxFloor){
+        std::cout<<"no more floors above";
+        }
+
+            else {
+                currentFloor++;
+            }
+        
+            
+    }
+        
+    
+
+    void moveDown (){
+        if (currentFloor == minFloor){
+            std::cout<<"no more floors below";
+            }
+
+            else{
+                currentFloor--;
+            }
+
+
+    }
+    
+
+    void move (int floor) { 
+        if (floor<minFloor || floor>maxFloor){
+            std::cout<<"incorrect value";
+        }
+
+        if (floor==currentFloor){
+            std::cout<<"you on this floor";
+            }
+            
+            else {
+                currentFloor=floor;
+            }
+
+
+        
+
     }
 
-    void moveDown () { //Your code here
-    }
-
-    void move (int floor) { //Your code here
-    }
-
-    int getCurrentFloor () {//Your code here
+    int getCurrentFloor () {
+        std::cout<<currentFloor;
     }
 
 private:
@@ -28,7 +68,11 @@ private:
     int currentFloor;
 };
 
-//Tests for Elevator class
+int main(){
+    Elevator lift(5,0,2);
+}
+
+
 void test () {
     Elevator elevator (10, 1, 3);
 
