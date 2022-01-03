@@ -22,10 +22,10 @@ include_directories(ForTeacher/Marks)
 
 
 #add_executable(LabTraining PartI/C++/Lesson_13/hw_lettter_frequncy.cpp)
-add_executable(ForTeacher  ForTeacher/Lift.cpp OlympicTraining/coins.cpp)
-add_executable(Composition ForTeacher/Composition.cpp)
+#add_executable(ForTeacher  ForTeacher/struct_print.cpp)
+#add_executable(Composition ForTeacher/Composition.cpp)
 #add_executable(Marks ForTeacher/Marks/marks.cpp)
-#add_executable(LabTraining   PartI/C++/Lesson_15/Elevator.cpp)
-add_executable(LabTraining    PartI/C++/Lesson_15/Dispatcher.cpp)
+add_executable(Elevator   PartI/C++/Lesson_15/Elevator.cpp)
+#add_executable(LabTraining    PartI/C++/Lesson_15/Dispatcher.cpp)
 
-add_executable(Olympic ForTeacher/Task2.cpp)
+#add_executable(Olympic ForTeacher/Task2.cpp)

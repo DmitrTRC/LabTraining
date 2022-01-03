@@ -7,59 +7,48 @@
 
 class Elevator {
 public:
-    Elevator (int maxFloor, int minFloor, int currentFloor) { 
-        if (minFloor>maxFloor ||maxFloor<minFloor){
-            std::cout<<"incorrect value";
+    Elevator (int maxFloor_, int minFloor_, int currentFloor_) : maxFloor (maxFloor_), minFloor (minFloor_),
+                                                                 currentFloor (currentFloor_) {  // Mistake!!! Notinitialized
+        if (minFloor > maxFloor ) { throw std::invalid_argument ("minFloor > maxFloor"); }
+
+        if ( currentFloor < minFloor || currentFloor > maxFloor) {
+            throw std::invalid_argument ("incorrect value"); // выбрасываем исключение в случае некорректных значений
         }
+
     }
 
     void moveUp () {
-        if (currentFloor == maxFloor){
-        std::cout<<"no more floors above";
+        if (currentFloor == maxFloor) {
+            std::cout << "no more floors above";
+        } else {
+            currentFloor++;
         }
 
-            else {
-                currentFloor++;
-            }
-        
-            
     }
-        
-    
-
-    void moveDown (){
-        if (currentFloor == minFloor){
-            std::cout<<"no more floors below";
-            }
-
-            else{
-                currentFloor--;
-            }
 
 
+    void moveDown () {
+        if (currentFloor == minFloor) {
+            std::cout << "no more floors below";
+        } else {
+            currentFloor--;
+        }
     }
-    
 
-    void move (int floor) { 
-        if (floor<minFloor || floor>maxFloor){
-            std::cout<<"incorrect value";
+    void move (int floor) {
+        if (floor < minFloor || floor > maxFloor) {
+            std::cout << "incorrect value";
         }
 
-        if (floor==currentFloor){
-            std::cout<<"you on this floor";
-            }
-            
-            else {
-                currentFloor=floor;
-            }
-
-
-        
-
+        if (floor == currentFloor) {
+            std::cout << "you on this floor";
+        } else {
+            currentFloor = floor;
+        }
     }
 
-    int getCurrentFloor () {
-        std::cout<<currentFloor;
+      int getCurrentFloor () const  {
+        return currentFloor;
     }
 
 private:
@@ -68,9 +57,6 @@ private:
     int currentFloor;
 };
 
-int main(){
-    Elevator lift(5,0,2);
-}
 
 
 void test () {
@@ -103,9 +89,10 @@ void test () {
 }
 
 int main () {
-    // Just call test() function
+    Elevator lift (5, 0, 2);
+
     test ();
     return 0;
 }
 
- ,
+
