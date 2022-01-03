@@ -27,6 +27,6 @@ include_directories(ForTeacher/Marks)
 #add_executable(Marks ForTeacher/Marks/marks.cpp)
 add_executable(Elevator   PartI/C++/Lesson_15/Elevator.cpp)
 #add_executable(LabTraining    PartI/C++/Lesson_15/Dispatcher.cpp)
-add_executable(Tests  PartI/Testing/nums.cpp)
+add_executable(Tests   ForTeacher/O_Task3.cpp)
 
 #add_executable(Olympic ForTeacher/Task2.cpp)
