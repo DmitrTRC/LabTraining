@@ -2,7 +2,8 @@
 // Created by Dmitry Morozov on 22.12.2021.
 //
 #include <iostream>
-#include <cassert>
+#include <chrono>
+#include <thread>
 #include <gtest/gtest.h>
 
 
@@ -44,6 +45,7 @@ public:
         if (floor == currentFloor) {
             std::cout << "you on this floor";
         } else {
+            _wait_to_move (floor);
             currentFloor = floor;
         }
     }
@@ -56,6 +58,11 @@ private:
     int maxFloor;
     int minFloor;
     int currentFloor;
+
+    void _wait_to_move (int floor) {
+        std::this_thread::sleep_for (std::chrono::milliseconds (1000 * abs (floor - currentFloor)));
+
+    }
 };
 
 TEST(Elevator, moveUp) {
@@ -64,37 +71,30 @@ TEST(Elevator, moveUp) {
     EXPECT_EQ (2, elevator.getCurrentFloor ());
 }
 
-//void test () {
-//    Elevator elevator_e2 (10, 1, 1);
-//    //Elevator elevator_e1 (1, 10, 5);
-//    Elevator elevator (10, 1, 3);
-//
-//
-//    elevator.move (5);
-//    std::cout << elevator.getCurrentFloor () << std::endl; // Has to print 5
-//    assert(elevator.getCurrentFloor () == 5);
-//
-//    elevator.moveUp ();
-//    std::cout << elevator.getCurrentFloor () << std::endl; // Has to print 6
-//    assert(elevator.getCurrentFloor () == 6);
-//
-//    elevator.moveDown ();
-//    elevator.moveDown ();
-//    std::cout << elevator.getCurrentFloor () << std::endl; // Has to print 4
-//    assert(elevator.getCurrentFloor () == 4);
-//
-//    elevator.move (3);
-//    std::cout << elevator.getCurrentFloor () << std::endl; // Has to print 3
-//    assert(elevator.getCurrentFloor () == 3);
-//
-//    elevator.move (10);
-//    std::cout << elevator.getCurrentFloor () << std::endl; // Has to print 10
-//    assert(elevator.getCurrentFloor () == 10);
-//
-//    std::cout << "Test passed! ✌️" << std::endl;
-//
-//}
-//
+TEST(Elevator, moveDown) {
+    Elevator elevator (10, 1, 3);
+    elevator.moveDown ();
+    EXPECT_EQ (2, elevator.getCurrentFloor ());
+}
+
+TEST(Elevator, move_time10) {
+    Elevator elevator (10, 1, 1);
+    elevator.move (10);
+    EXPECT_EQ (10, elevator.getCurrentFloor ());
+}
+
+TEST(Elevator, move_time1) {
+    Elevator elevator (10, 1, 1);
+    elevator.move (1);
+    EXPECT_EQ (1, elevator.getCurrentFloor ());
+}
+
+TEST(Elevator, move_time20) {
+    Elevator elevator (150, 1, 1);
+    elevator.move (20);
+    EXPECT_EQ (20, elevator.getCurrentFloor ());
+}
+
 //int main () {
 //    Elevator lift (5, 0, 2);
 //
