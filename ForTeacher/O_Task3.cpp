@@ -37,13 +37,12 @@
 #include  <sstream>
 #include <cassert>
 #include <cmath>
-#include <iomanip>
+
 
 
 //Round  to  2  digits
-double n_round (double value, unsigned char prec) {
-    double pow_10 = pow (10.0f, (double) prec);
-    return round (value * pow_10) / pow_10;
+double round_to_2 (double value) {
+    return round (value * 100) / 100;
 }
 
 
@@ -67,8 +66,8 @@ double max_relation (const std::string &str) {
             }
         }
     }
-    max_relation = n_round (max_relation, 2);
-    return max_relation;
+
+    return round_to_2 (max_relation);;
 }
 
 void Tests () {
@@ -81,7 +80,7 @@ void Tests () {
            max_relation ("99 98 97 98 50 31 99 98 97") == 3244.93);
     assert(max_relation ("1 1 1 1 1 1 1 1 1 1 1") == 0.33);
 
-    std::cout << "All tests passed 👍" << std::endl;
+    std::cout << "All tests Task 3 : passed 👍" << std::endl;
 
 }
 

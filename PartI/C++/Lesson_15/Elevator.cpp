@@ -9,9 +9,8 @@ class Elevator {
 public:
     Elevator (int maxFloor_, int minFloor_, int currentFloor_) : maxFloor (maxFloor_), minFloor (minFloor_),
                                                                  currentFloor (currentFloor_) {  // Mistake!!! Notinitialized
-        if (minFloor > maxFloor ) { throw std::invalid_argument ("minFloor > maxFloor"); }
 
-        if ( currentFloor < minFloor || currentFloor > maxFloor) {
+        if (minFloor > maxFloor || currentFloor < minFloor || currentFloor > maxFloor) {
             throw std::invalid_argument ("incorrect value"); // выбрасываем исключение в случае некорректных значений
         }
 
@@ -60,6 +59,8 @@ private:
 
 
 void test () {
+    Elevator elevator_e2 (10, 1, 1);
+    //Elevator elevator_e1 (1, 10, 5);
     Elevator elevator (10, 1, 3);
 
 
@@ -84,15 +85,15 @@ void test () {
     std::cout << elevator.getCurrentFloor () << std::endl; // Has to print 10
     assert(elevator.getCurrentFloor () == 10);
 
-    std::cout << "Test passed!" << std::endl;
+    std::cout << "Test passed! ✌️" << std::endl;
 
 }
-
-int main () {
-    Elevator lift (5, 0, 2);
-
-    test ();
-    return 0;
-}
+//
+//int main () {
+//    Elevator lift (5, 0, 2);
+//
+//    test ();
+//    return 0;
+//}
 
 

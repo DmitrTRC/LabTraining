@@ -301,3 +301,4 @@ fabric.properties
 *.out
 *.app
 
+!/googletest/
