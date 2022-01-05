@@ -46,7 +46,7 @@ public:
         }
     }
 
-      int getCurrentFloor () const  {
+      [[nodiscard]] int getCurrentFloor () const  {
         return currentFloor;
     }
 
