@@ -1,0 +1,16 @@
+1) Read GIT Manual and learn how to use it. (https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+
+Make  MEMO :
+ Before work:
+ git pull {
+ git fetch + git merge
+ }
+
+ after work:
+ git  commit
+ git  push
+
+
+2) Fill schoool_training repository with your code.
+
+3) Project Marks; Code. Menu implementation.
