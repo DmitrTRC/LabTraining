@@ -4,7 +4,7 @@
 #include <iostream>
 
 
-int max (int a, int b) {
+ int max (const int &a, const int &b) {
     return a > b ? a : b;
 }
 
