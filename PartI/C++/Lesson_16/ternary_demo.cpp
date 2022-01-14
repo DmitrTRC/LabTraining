@@ -9,11 +9,11 @@
 }
 
 int main () {
-    int a = 10;
+    int a = 10 ;
     int b = 20;
     int c = 30;
 
-    std::cout << " Max Value is: " << max(c, max (a, b)) << std::endl;
+    std::cout << " Max Value is: " << max(10.5, max (a, b)) << std::endl;
 
     return 0;
 }

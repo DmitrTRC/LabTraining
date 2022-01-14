@@ -13,4 +13,4 @@ Make  MEMO :
 
 2) Fill schoool_training repository with your code.
 
-3) Project Marks; Code. Menu implementation.
+3) Project Marks; Code. Menu implementation and handlers implementation.
